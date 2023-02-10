@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: #121214;
+    --bg-light: #FFFFFF;
+
+    --bg-card: #29292E;
+    --bg-card-light: #E1E1E6;
+    --bg-card-active: #02799D;
+    --color-icons: #C4C4CC;
+
+    --base-color: 20;
+
+    --primary-color: hsl(var(--base-color), 100%, 60%);
+
+    --text-color: #fff;
+    --text-color-light: #323238;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button.hide {
+    display: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 2rem;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    transition: all 0.7s;
+}
+
+nav.mode {
+    display: flex;
+    position: absolute;
+    right: 6.4rem;
+    top: 6.4rem;
+}
+
+main {
+    justify-self: center;
+    align-self: end;
+    align-items: center;
+    display: flex;
+    gap: 19.2rem;
+}
+
+main div.timerAndControls {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+main div.timerAndControls div.timer span {
+    font-size: 12.617rem;
+}
+
+main div.timerAndControls div.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+/* cards */
+
+main div.card-sounds {
+    width: 30.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+}
+
+main div.card-sounds div.card {
+    background-color: var(--bg-card);
+    border-radius: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 13.8rem;
+    height: 15.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+main div.card-sounds div.card svg path{
+    fill: var(--color-icons);
+}
+
+main div.card-sounds div.card.active {
+    background-color: var(--primary-color);
+}
+
+main div.card-sounds div.card.active svg path{
+    fill: var(--text-color);
+}
+
+main div.card-sounds div.card input[type=range] {
+    width: 9rem;
+    -webkit-appearance: none;
+    appearance: none;
+    height: .4rem;
+    border-radius: 50rem;
+    background-color: var(--text-color);
+    outline: none;
+    z-index: 10;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: .4rem;
+    cursor: pointer;
+    background: var(--text-color);
+    border-radius: 5rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 5rem;
+    background: var(--text-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -.6rem;
+}
+
+main div.card-sounds div.card.active input[type=range]::-webkit-slider-runnable-track {
+    background: var(--text-color);
+}
+
+main div.card-sounds div.card.active input[type=range]::-webkit-slider-thumb {
+    background: var(--text-color);
+}
+
+/* Light Mode */
+
+body.light {
+    background-color: var(--bg-light);
+    color: var(--text-color-light);
+}
+
+body.light main div.card-sounds div.card{
+    background-color: var(--bg-card-light);
+}
+
+body.light main div.card-sounds div.card input[type=range] {
+    background-color: var(--text-color);
+}
+
+body.light main div.card-sounds div.card.active {
+    background-color: var(--primary-color);
+}
+
+body.light main div.card-sounds div.card.active svg path{
+    fill: var(--text-color);
+}
+
+body.light input[type=range]::-webkit-slider-runnable-track {
+    background: var(--text-color-light);
+}
+
+body.light input[type=range]::-webkit-slider-thumb {
+    background: var(--text-color-light);
+}
+
+body.light main div.timerAndControls div.controls button svg path{
+    fill: var(--text-color-light);
+}
+
+body.light main div.card-sounds div.card svg path{
+    fill: var(--text-color-light);
+}
